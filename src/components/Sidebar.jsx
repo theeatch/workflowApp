@@ -1,7 +1,7 @@
 import React from "react";
 
 const Sidebar = ({ addNode }) => {
-  const nodeTypes = ["input", "Moderator", "output"];
+  const nodeTypes = ["input", "default", "output"];
 
   return (
     <div className="w-1/4 h-full p-4 bg-gray-100 border-r border-gray-300 shadow-md">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EdgeProperties = ({ selectedEdge, onUpdateEdge }) => {
+const EdgeProperties = ({ selectedEdge, onUpdateEdge, onDeleteEdge }) => {
   const [label, setLabel] = useState(selectedEdge?.label || "");
 
   const handleSave = () => {
@@ -8,6 +8,7 @@ const EdgeProperties = ({ selectedEdge, onUpdateEdge }) => {
       onUpdateEdge(selectedEdge.id, label);
     }
   };
+
 
   return (
     <div className="p-4 bg-white border border-gray-300 shadow-md rounded">
@@ -24,6 +25,12 @@ const EdgeProperties = ({ selectedEdge, onUpdateEdge }) => {
         className="w-full mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700"
       >
         Save
+      </button>
+      <button
+        onClick={onDeleteEdge}
+        className="w-full mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-green-700"
+      >
+        Delete
       </button>
     </div>
   );

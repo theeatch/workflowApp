@@ -25,7 +25,7 @@ const Canvas = () => {
   const addNode = (type) => {
     const newNode = {
       id: `${nodes.length + 1}`,
-      type: "default",
+      type: type,
       data: { label: type },
       position: { x: Math.random() * 400 + 50, y: Math.random() * 300 + 50 },
     };
@@ -47,7 +47,13 @@ const Canvas = () => {
     setSelectedNodeId(null);
   }, []);
 
-  
+  const deleteEdge = () => {
+    if (selectedEdge) {
+      setEdges((prevEdges) => prevEdges.filter((edge) => edge.id !== selectedEdge.id));
+      setSelectedEdge(null);
+    }
+  };
+
   const updateNodeData = (id, newData) => {
     setNodes((prevNodes) =>
       prevNodes.map((node) =>
@@ -68,7 +74,6 @@ const Canvas = () => {
     setSelectedEdge(null);
   };
 
-  
   const deleteNode = () => {
     if (selectedNode) {
       setNodes((prevNodes) => prevNodes.filter((node) => node.id !== selectedNode.id));
@@ -108,6 +113,19 @@ const Canvas = () => {
   const saveWorkflow = () => {
     localStorage.setItem("workflow", JSON.stringify({ nodes, edges }));
     alert("Workflow saved!");
+  };
+  const exportWorkflow = () => {
+    const workflowData = { nodes, edges };
+    const jsonString = JSON.stringify(workflowData, null, 2); 
+
+    // Create a Blob and download it as a file
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "workflow.json";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   
@@ -161,6 +179,7 @@ const Canvas = () => {
             <EdgeProperties
               selectedEdge={selectedEdge}
               onUpdateEdge={updateEdgeLabel}
+              onDeleteEdge={deleteEdge}
             />
           ) : (
             <p className="text-gray-500">Select a node or edge</p>
@@ -176,6 +195,12 @@ const Canvas = () => {
             onClick={saveWorkflow}
           >
             Save Workflow
+          </button>
+          <button
+            className="w-full mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700"
+            onClick={exportWorkflow}
+          >
+            Export Workflow (JSON)
           </button>
         </div>
       </div>
