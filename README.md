@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# 🚀 Workflow Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Workflow Dashboard is a **React-based application** that enables users to **create interactive workflows using a drag-and-drop interface** and visualize workflow data with **dynamic charts**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Features Implemented
 
-### `npm start`
+### 1️⃣ Drag-and-Drop Workflow Builder
+- ✅ **Canvas** – A **resizable, zoomable workspace** for workflow building.
+- ✅ **Draggable Nodes** – Supports **Task, Decision, Start, and End nodes**.
+- ✅ **Connections** – Users can connect nodes with lines (simulating directed edges).
+- ✅ **Node Properties Panel** – Allows editing **name, execution time, and type** of nodes.
+- ✅ **Validation** – Highlights **disconnected nodes** and prevents multiple **Start nodes**.
+- ✅ **Save & Load Workflows** – Saves workflow in **local storage** and reloads on refresh.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2️⃣ Interactive Edge Features
+- ✅ **Click-to-Edit Edge Labels** – Users can **click edges** and rename them.
+- ✅ **Delete Edges from Sidebar** – Edge properties panel includes a **"Delete Edge"** button.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3️⃣ Workflow Validation & Error Handling
+- ✅ **Disconnected Node Detection** – Highlights nodes **without connections** in **red**.
+- ✅ **Validation Alert** – Alerts users if a **workflow is invalid**.
+- ✅ **Edge Connection Rules** – Ensures proper flow between different **node types**.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4️⃣ Export & Import Workflows
+- ✅ **Export Workflow as JSON** – Users can **download** the current workflow.
+- ✅ **Preserve Workflow Data** – Workflows **retain node positions, labels, and edges**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📌 Features to be Added Soon 🚀
 
-### `npm run eject`
+### 1️⃣ Interactive Analytics Panel
+- 🔜 **Bar Chart** – Visualizes **execution time for each node**.
+- 🔜 **Line Chart** – Displays **cumulative execution time across connected nodes**.
+- 🔜 **Pie Chart** – Represents the **distribution of execution times by node type**.
+- 🔜 **Dynamic Interactions** – Hovering over a chart will **highlight the corresponding nodes** in the workflow.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2️⃣ Enhanced Workflow Features
+- 🔜 **Simulate Execution** – Animate the workflow to show the **processing sequence**.
+- 🔜 **Grid Snapping** – Auto-align nodes for **better organization**.
+- 🔜 **Import JSON Workflows** – Allow users to **re-import saved workflows**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📌 How to Run the Project
 
-## Learn More
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/yourusername/workflow-dashboard.git
+cd workflow-dashboard
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+or go to https://workflow-app-virid.vercel.app/
